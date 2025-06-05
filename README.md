@@ -1,5 +1,7 @@
 # RAG-Based-Legal-Assistant
+
 > Team: **Access Denied**
+>
 > Hackathon Project: **Aventus**
 
 Aventus is a RAG-based legal assistant created during a hackathon to help lawyers and users get quick, accurate answers to legal questions—without flipping through thousands of pages in legal books.
