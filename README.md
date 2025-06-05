@@ -9,19 +9,19 @@ Aventus is a RAG-based legal assistant created during a hackathon to help lawyer
 It uses Retrieval-Augmented Generation (RAG) with LLaMA 2, BERT (bert-base-uncased), and the LangChain framework to extract grounded answers from domain-specific resources like books on Intellectual Property and Patent Law.
 
 ## Features
-### Book-Based Legal Q&A
+#### Book-Based Legal Q&A
 - Ask questions directly from legal books and get accurate, contextual answers.
 
-### RAG Pipeline (LLaMA 2 + BERT)
+#### RAG Pipeline (LLaMA 2 + BERT)
 - Retrieval and generation system combines the strengths of transformer-based models.
 
-### Next.js Frontend + API Backend
+#### Next.js Frontend + API Backend
 - Fast, interactive UI built in Next.js with API connection to the RAG system.
 
-### MongoDB Integration
+#### MongoDB Integration
 - Used for storing book chunks, embeddings, and user interactions.
 
-### Designed for Legal Experts & General Users
+#### Designed for Legal Experts & General Users
 - Makes legal knowledge accessible and understandable.
 
 ## Tech Stack
@@ -45,7 +45,7 @@ RAG-Based-Legal-Assistant/
 ```
 
 ## Setup Instructions
-### Backend (RAG System)
+#### Backend (RAG System)
 ```bash
 
 cd backend
@@ -54,7 +54,7 @@ python app.py                    # or npm run dev
 ```
 Make sure you have access to LLaMA 2 weights and BERT. Use HuggingFace or local models.
 
-### Frontend
+#### Frontend
 ```bash
 
 cd frontend
