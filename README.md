@@ -1,79 +1,96 @@
-<p align="center">
-  <a href="https://nextjs-fastapi-starter.vercel.app/">
-    <img src="https://assets.vercel.com/image/upload/v1588805858/repositories/vercel/logo.png" height="96">
-    <h3 align="center">Next.js FastAPI Starter</h3>
-  </a>
-</p>
+# RAG-Based-Legal-Assistant
+> Team: **Access Denied**
+> Hackathon Project: **Aventus**
 
-<p align="center">Simple Next.js boilerplate that uses <a href="https://fastapi.tiangolo.com/">FastAPI</a> as the API backend.</p>
+Aventus is a RAG-based legal assistant created during a hackathon to help lawyers and users get quick, accurate answers to legal questions—without flipping through thousands of pages in legal books.
 
-<br/>
+It uses Retrieval-Augmented Generation (RAG) with LLaMA 2, BERT (bert-base-uncased), and the LangChain framework to extract grounded answers from domain-specific resources like books on Intellectual Property and Patent Law.
 
-## Introduction
+## Features
+### Book-Based Legal Q&A
+- Ask questions directly from legal books and get accurate, contextual answers.
 
-This is a hybrid Next.js + Python app that uses Next.js as the frontend and FastAPI as the API backend. One great use case of this is to write Next.js apps that use Python AI libraries on the backend.
+### RAG Pipeline (LLaMA 2 + BERT)
+- Retrieval and generation system combines the strengths of transformer-based models.
 
-## How It Works
+### Next.js Frontend + API Backend
+- Fast, interactive UI built in Next.js with API connection to the RAG system.
 
-The Python/FastAPI server is mapped into to Next.js app under `/api/`.
+### MongoDB Integration
+- Used for storing book chunks, embeddings, and user interactions.
 
-This is implemented using [`next.config.js` rewrites](https://github.com/digitros/nextjs-fastapi/blob/main/next.config.js) to map any request to `/api/:path*` to the FastAPI API, which is hosted in the `/api` folder.
+### Designed for Legal Experts & General Users
+- Makes legal knowledge accessible and understandable.
 
-On localhost, the rewrite will be made to the `127.0.0.1:8000` port, which is where the FastAPI server is running.
+## Tech Stack
 
-In production, the FastAPI server is hosted as [Python serverless functions](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python) on Vercel.
+| Component       | Technology                                       |
+| --------------- | ------------------------------------------------ |
+| **LLMs**        | LLaMA 2, BERT (bert-base-uncased)                |
+| **Framework**   | LangChain                                        |
+| **Frontend**    | Next.js                                            |
+| **Backend**     | Node.js / Python FastAPI *(based on your stack)* |
+| **Database**    | MongoDB                                          |
+| **Data Source** | Legal books (IP, Patents, etc.)                  |
 
-## Demo
 
-https://nextjs-fastapi-starter.vercel.app/
+## Folder Structure
 
-## Deploy Your Own
-
-You can clone & deploy it to Vercel with one click:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdigitros%2Fnextjs-fastapi%2Ftree%2Fmain)
-
-## Developing Locally
-
-You can clone & create this repo with the following command
-
-```bash
-npx create-next-app nextjs-fastapi --example "https://github.com/digitros/nextjs-fastapi"
+```
+RAG-Based-Legal-Assistant/
+├── frontend/        # Next.js UI
+├── backend/         # API server and RAG logic and Database Connection
 ```
 
-## Getting Started
-
-First, install the dependencies:
-
+## Setup Instructions
+### Backend (RAG System)
 ```bash
+
+cd backend
+pip install -r requirements.txt  # or npm install (if Node)
+python app.py                    # or npm run dev
+```
+Make sure you have access to LLaMA 2 weights and BERT. Use HuggingFace or local models.
+
+### Frontend
+```bash
+
+cd frontend
 npm install
-# or
-yarn
-# or
-pnpm install
-```
-
-Then, run the development server:
-
-```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
+Ensure .env or config file points to the correct backend API URL.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Sample Queries
+- *"What is considered a patent violation?"*
 
-The FastApi server will be running on [http://127.0.0.1:8000](http://127.0.0.1:8000) – feel free to change the port in `package.json` (you'll also need to update it in `next.config.js`).
+- *"Can software be patented under Indian law?"*
 
-## Learn More
+- *"What falls under fair use in copyright?"*
 
-To learn more about Next.js, take a look at the following resources:
+The model responds using **book-based knowledge**, not generic web data.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [FastAPI Documentation](https://fastapi.tiangolo.com/) - learn about FastAPI features and API.
+## Use Case
+Helps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-# Access-Denied
+- Lawyers to avoid time-consuming manual reference checks
+
+- General users to understand rights without legal jargon
+
+- Academicians for quick citation from domain texts
+
+## Future Scope
+- Citation references and source tracking
+
+- Authentication and role management
+
+- Add books from more legal domains (e.g., contract law, cyber law)
+
+- Voice query and multilingual support
+
+
+## Hackathon Impact
+Built in limited time under intense constraints
+
+Applied real-world NLP (RAG) to solve an important legal accessibility problem
+
